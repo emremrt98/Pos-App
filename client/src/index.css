@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.ant-btn-primary {
+  background-color: #1677ff;
+}
+
+.menu-links .active{
+  color: #1677ff;
+}
+
+@media (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+  .categories::-webkit-scrollbar,
+  .cart-items::-webkit-scrollbar,
+  .products::-webkit-scrollbar {
+    display: none;
+  }
+}
