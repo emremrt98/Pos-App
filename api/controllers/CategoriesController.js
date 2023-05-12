@@ -13,6 +13,19 @@ const createCategories = async (req, res) => {
     }
 }
 
+const getAllCategories = async (req, res) => {
+    try {
+        const categories = await Category.find();
+        res.status(200).send({
+            succeed: true,
+            categories,
+        })
+    } catch (error) {
+        res.status(404).json({ error });
+    }
+}
+
 module.exports = {
-    createCategories
+    createCategories,
+    getAllCategories
 };
