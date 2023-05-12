@@ -1,18 +1,6 @@
-const Category = require('../Models/Category');
 const router = require('express').Router();
+const categoriesController = require('../controllers/CategoriesController');
 
-router.post('/add-category', async (req, res) => {
-    try {
-        console.log('selam');
-        const newCategory = new Category(req.body);
-        await newCategory.save();
-        res.status(200).send({
-            succeed: true,
-            newCategory,
-        })
-    } catch (error) {
-        res.status(404).json({ error });
-    }
-});
+router.post('/add-category', categoriesController.createCategories);
 
 module.exports = router;
